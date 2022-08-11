@@ -1,0 +1,17 @@
+<%- include("partials/header", {tituloWeb: "Productos"}) -%>
+<%- include("partials/body") -%>
+  <% if(response) { %>
+    <% if(response.deleted.length === 0) { %>
+      <h1 class="text-center">El producto con el id especificado no ha sido encontrado.</h1>
+    <% } else { %>
+      <h1 class="col-12 text-center">Producto eliminado</h1>
+      <%- include("partials/product", {
+        nombre: response.deleted[0].nombre,
+        imagen: response.deleted[0].imagen,
+        precio: response.deleted[0].precio
+      }) %>
+    <% } %>
+  <% } else { %>
+    <h4 class="text-center">El producto con el id especificado no ha sido encontrado.</h4>
+  <% } %>
+<%- include("partials/footer") -%>

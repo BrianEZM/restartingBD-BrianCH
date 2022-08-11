@@ -1,0 +1,21 @@
+<%- include("partials/header", {tituloWeb: "Productos"}) -%>
+<%- include("partials/body") -%>
+  <% if(response) { %>
+    <h2 class="col-12 text-center">Producto agregado</h2>
+    <%- include("partials/product", {
+      nombre: response.productUpdate.nombre,
+      imagen: response.productUpdate.imagen,
+      precio: response.productUpdate.precio
+    }) %>
+    
+    <h2 class="col-12 text-center">Producto reemplazado</h2>
+    <%- include("partials/product", {
+      nombre: response.productPrevious[0].nombre,
+      imagen: response.productPrevious[0].imagen,
+      precio: response.productPrevious[0].precio
+    }) %>
+
+  <% } else { %>
+    <h4 class="text-center">Alguno de los campos ha quedado sin rellenar</h4>
+  <% } %>
+<%- include("partials/footer") -%>

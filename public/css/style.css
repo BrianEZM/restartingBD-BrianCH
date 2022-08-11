@@ -1,0 +1,38 @@
+.box-shadow {
+  box-shadow: 0 0 5px rgba(35, 5, 5, 0.758);
+  border-radius: 8px;
+  padding: 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+form p {
+  margin: 0;
+}
+
+form input {
+  margin: 0 0 8px 0;
+  width: 100%
+}
+
+#chat {
+  min-height: 50px;
+  max-height: 400px;
+  overflow-y: scroll;
+  padding: 20px;
+  position: relative;
+}
+
+#chat strong {
+  color: rgba(202, 20, 208, 0.68);
+}
+
+#chat span {
+  color: rgba(148, 7, 127, 0.658);
+}
+
+#chat i {
+  color: rgba(48, 5, 56, 0.854);
+}

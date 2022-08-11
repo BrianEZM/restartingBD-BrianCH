@@ -1,0 +1,19 @@
+<%- include("partials/header", {tituloWeb: "Productos"}) -%>
+<%- include("partials/body") -%>
+  <% if(response) { %>
+    <h1 class="col-12 text-center">Lista de productos</h1>
+    <% if(response.length > 0) { %>
+      <% response.forEach(element => { %>
+        <%- include("partials/product", {
+          nombre: element.nombre,
+          imagen: element.imagen,
+          precio: element.precio
+        }) %>
+      <% }); %>
+    <% } else { %>
+      <h4 class="col-12 text-center mt-3">El id ingresado esta fuera de rango</h4>
+    <% } %>
+  <% } else { %>
+    <h4 class="text-center">El producto con el id especificado no ha sido encontrado</h4>
+  <% } %>
+<%- include("partials/footer") -%>
